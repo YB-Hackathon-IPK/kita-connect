@@ -70,3 +70,5 @@ platforms
 resources
 plugins
 .idea
+.vscode
+typings/

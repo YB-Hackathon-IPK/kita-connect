@@ -1,8 +1,12 @@
 <ion-content>
   <section class="logo">
-    <img src="assets/img/logo.png">
+    <img src="assets/img/logo.png" />
   </section>
   <section *ngIf="params$ | async as params">
     {{ params.get('type') }}
+  </section>
+
+  <section>
+    <img src="{{imageDataUrl}}" alt="" />
   </section>
 </ion-content>
