@@ -1,0 +1,38 @@
+<ion-content fullscreen
+             padding
+             scroll-y="false">
+  <ion-slides>
+
+    <ion-slide>
+      <img src="/assets/img/logo.png">
+      <h2>Herzlich willkommen!</h2>
+      <p>Erhalten Sie durch diese App einen Einblick in den Alltag ihres Kindes bei der Kita.</p>
+    </ion-slide>
+
+    <ion-slide>
+      <h2>Timeline</h2>
+      <p>
+        Bei der Timeline werden die Ereignisse des Kindes chronologisch aufgelistet. Sie haben
+        jeweils die Möglichkeit, einen Beitrag zu ihren Favoriten hinzuzufügen.
+      </p>
+    </ion-slide>
+
+    <ion-slide>
+      <img src="./slide-3.png"/>
+      <h2>What is Ionic Pro?</h2>
+      <p><b>Ionic Pro</b> is a powerful set of services and features built on top of Ionic Framework
+                          that brings a totally new level of app development agility to mobile dev
+                          teams.</p>
+    </ion-slide>
+
+    <ion-slide>
+      <img src="./slide-4.png"/>
+      <ion-button fill="clear">Los gehts!
+        <ion-icon slot="end"
+                  name="arrow-forward"
+                  [routerLink]="['parents', 'tabs', 'overview']"></ion-icon>
+      </ion-button>
+    </ion-slide>
+
+  </ion-slides>
+</ion-content>
