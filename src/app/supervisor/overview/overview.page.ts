@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-tab1',
@@ -7,7 +8,10 @@ import { Component } from '@angular/core';
 })
 export class OverviewPage {
 
-  constructor() {
+  constructor(private router: Router) {
   }
 
+  open(type: string) {
+    this.router.navigate(['supervisor', 'tabs', 'create-post', type]);
+  }
 }

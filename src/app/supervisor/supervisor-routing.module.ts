@@ -18,6 +18,16 @@ const routes: Routes = [
         ]
       },
       {
+        path: 'create-post',
+        children: [
+          {
+            path: '',
+            loadChildren: () =>
+              import('./create-post/create-post.module').then(m => m.CreatePostModule)
+          }
+        ]
+      },
+      {
         path: '',
         redirectTo: '/supervisor/tabs/overview',
         pathMatch: 'full'
