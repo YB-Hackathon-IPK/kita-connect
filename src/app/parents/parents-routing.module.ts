@@ -13,7 +13,7 @@ const routes: Routes = [
           {
             path: '',
             loadChildren: () =>
-              import('../timeline/timeline.module').then(m => m.TimelineModule)
+              import('./timeline/timeline.module').then(m => m.TimelineModule)
           }
         ]
       },
@@ -23,7 +23,7 @@ const routes: Routes = [
           {
             path: '',
             loadChildren: () =>
-              import('../favorites/favorites.module').then(m => m.FavoritesModule)
+              import('./favorites/favorites.module').then(m => m.FavoritesModule)
           }
         ]
       },
@@ -33,7 +33,7 @@ const routes: Routes = [
           {
             path: '',
             loadChildren: () =>
-              import('../highlights/highlights.module').then(m => m.HighlightsModule)
+              import('./highlights/highlights.module').then(m => m.HighlightsModule)
           }
         ]
       },
