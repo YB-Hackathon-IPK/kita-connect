@@ -1,14 +1,15 @@
 :host {
   ion-content {
-    --background: #fff url('../../assets/img/waben.svg') no-repeat 0 100% / 70%;
+    --background: #fff url('../../assets/img/waben.svg') no-repeat 0 100% / 50%;
 
     section.button-wrapper {
       display: flex;
       flex-direction: column;
       align-items: center;
+      margin-top: 60px;
 
       ion-button {
-        width: 50%;
+        width: 200px;
       }
 
       span {
