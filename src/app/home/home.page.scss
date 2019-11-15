@@ -1,0 +1,25 @@
+:host {
+  ion-content {
+    --background: #fff url('../../assets/img/waben.svg') no-repeat 0 100% / 70%;
+
+    section.button-wrapper {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      ion-button {
+        width: 50%;
+      }
+
+      span {
+        color: black;
+        margin: 10px 0;
+      }
+    }
+
+    section.logo {
+      width: 70%;
+      margin: 50px auto;
+    }
+  }
+}

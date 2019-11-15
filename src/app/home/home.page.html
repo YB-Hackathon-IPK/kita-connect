@@ -1,8 +1,10 @@
 <ion-content>
-  <section>
-    <ion-button [routerLink]="['supervisor']">Betreuer</ion-button>
+  <section class="logo">
+    <img src="/assets/img/logo.png">
   </section>
-  <section>
+  <section class="button-wrapper">
+    <ion-button [routerLink]="['supervisor']">Betreuer</ion-button>
+    <span>oder</span>
     <ion-button [routerLink]="['parents']">Elternteil</ion-button>
   </section>
 </ion-content>
