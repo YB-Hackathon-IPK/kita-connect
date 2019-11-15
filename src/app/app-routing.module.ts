@@ -9,6 +9,10 @@ const routes: Routes = [
   {
     path: 'parents',
     loadChildren: () => import('./parents/parents.module').then(m => m.ParentsModule)
+  },
+  {
+    path: 'supervisor',
+    loadChildren: () => import('./supervisor/supervisor.module').then(m => m.SupervisorModule)
   }
 ];
 

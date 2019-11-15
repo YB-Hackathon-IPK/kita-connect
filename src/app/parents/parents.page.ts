@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-tabs',
+  selector: 'app-parents',
   templateUrl: 'parents.page.html',
   styleUrls: ['parents.page.scss']
 })
