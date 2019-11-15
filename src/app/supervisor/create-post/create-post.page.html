@@ -1,3 +1,5 @@
 <ion-content>
-  works
+  <section *ngIf="params$ | async as params">
+    {{ params.get('type') }}
+  </section>
 </ion-content>

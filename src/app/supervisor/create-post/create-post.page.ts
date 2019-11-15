@@ -7,10 +7,9 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['create-post.page.scss']
 })
 export class CreatePostPage {
+  params$ = this.route.paramMap;
+
   constructor(private route: ActivatedRoute) {
-    this.route.paramMap.subscribe(map => {
-      console.log(map);
-    });
   }
 
 }
