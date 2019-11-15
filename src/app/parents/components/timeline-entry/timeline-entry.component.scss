@@ -1,0 +1,41 @@
+:host {
+  margin-bottom: 8px;
+
+  ion-grid {
+    padding-top: 0;
+  }
+
+  .timeline-entry-title-row {
+    border-bottom: var(--ion-color-medium) 1px solid;
+    height: 28px;
+  }
+
+  .favorite-indicator {
+    font-size: 24px;
+  }
+
+  img {
+    margin-top: 0.5em;
+  }
+
+  .text-content {
+    padding: 0 4px;
+  }
+
+  .sentiment-container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+    ion-icon {
+
+      &.selected {
+        color: var(--ion-color-primary);
+      }
+
+      & + ion-icon {
+        margin-left: 2px;
+      }
+    }
+  }
+}

@@ -1,0 +1,43 @@
+:host {
+  max-width: 80vw;
+  display: block;
+
+  h4 {
+    margin-left: 24px;
+  }
+
+  .timeline-entry-wrapper {
+    display: flex;
+
+    .timeline-step {
+      flex-basis: 64px;
+      flex-shrink: 0;
+      position: relative;
+    }
+
+    .timeline-bubble {
+      position: absolute;
+      top: 16px;
+      left: 50%;
+      transform: translateX(-12px);
+      width: 24px;
+      height: 24px;
+      background-color: var(--ion-color-primary);
+      border-radius: 50%;
+    }
+
+    &:not(.timeline-last-entry) .timeline-line {
+      background-color: var(--ion-color-primary);
+      width: 2px;
+      height: 100%;
+      position: absolute;
+      left: 50%;
+      top: 32px;
+      transform: translateX(-1px);
+    }
+
+    app-timeline-entry {
+      flex-grow: 1;
+    }
+  }
+}

@@ -1,0 +1,30 @@
+<ion-grid>
+  <ion-row class="timeline-entry-title-row ion-justify-content-between ion-align-items-center">
+    <span>{{ entry.timestamp | date:'shortTime' }}</span>
+    <ion-icon class="favorite-indicator"
+              (click)="updateFavorite()"
+              [name]="entry.favorite ? 'heart' : 'heart-empty'">
+    </ion-icon>
+  </ion-row>
+  <ion-row *ngIf="entry.type === 'image'">
+    <img [src]="entry.image">
+  </ion-row>
+  <ion-row *ngIf="entry.text"
+           class="text-content">
+    <ion-col [size]="isValidSentiment() ? 10 : 12">
+      <p>{{ entry.text }} {{ concatenatedTags }}</p>
+    </ion-col>
+    <ion-col class="sentiment-container"
+             *ngIf="isValidSentiment()">
+      <ion-icon src="/assets/icon/smile.svg"
+                [class.selected]="entry.sentiment === 2">
+      </ion-icon>
+      <ion-icon src="/assets/icon/meh.svg"
+                [class.selected]="entry.sentiment === 1">
+      </ion-icon>
+      <ion-icon src="/assets/icon/frown.svg"
+                [class.selected]="entry.sentiment === 0">
+      </ion-icon>
+    </ion-col>
+  </ion-row>
+</ion-grid>

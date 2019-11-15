@@ -23,6 +23,8 @@
 @import "~@ionic/angular/css/flex-utils.css";
 
 :root {
+  --ion-font-family: 'Quicksand', 'Helvetica', sans-serif;
+
   --ion-color-primary: #F9CC11;
   --ion-color-primary-rgb: 249, 204, 17;
   --ion-color-primary-contrast: #000000;
@@ -85,8 +87,19 @@
   --ion-color-light-contrast-rgb: 0, 0, 0;
   --ion-color-light-shade: #d7d8da;
   --ion-color-light-tint: #f5f6f9;
+
+  --ion-tab-bar-background: var(--ion-color-primary);
+  --ion-tab-bar-background-focused: var(--ion-color-primary);
+  --ion-tab-bar-border-color: var(--ion-color-primary);
+  --ion-tab-bar-color: var(--ion-color-secondary);
+  --ion-tab-bar-color-activated: var(--ion-color-secondary-contrast);
 }
 
 ion-button {
   --border-radius: 16px;
+}
+
+p {
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
 }

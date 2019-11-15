@@ -6,6 +6,7 @@ import { FormsModule } from '@angular/forms';
 import { ParentsPageRoutingModule } from './parents-routing.module';
 
 import { ParentsPage } from './parents.page';
+import { TimelineService } from './services/timeline.service';
 
 @NgModule({
   imports: [
@@ -14,7 +15,12 @@ import { ParentsPage } from './parents.page';
     FormsModule,
     ParentsPageRoutingModule
   ],
-  declarations: [ParentsPage]
+  declarations: [
+    ParentsPage
+  ],
+  providers: [
+    TimelineService
+  ]
 })
 export class ParentsModule {
 }

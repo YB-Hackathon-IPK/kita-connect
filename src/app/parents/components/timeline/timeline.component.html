@@ -1,0 +1,15 @@
+<ng-container *ngIf="timeline">
+  <ng-container *ngFor="let dayKey of timelineKeys">
+    <h4>{{ dayKey | date:'longDate' }}</h4>
+    <div *ngFor="let entry of timeline[dayKey]; last as isLast"
+         class="timeline-entry-wrapper"
+         [class.timeline-last-entry]="isLast">
+      <div class="timeline-step">
+        <div class="timeline-bubble"></div>
+        <div class="timeline-line"></div>
+      </div>
+      <app-timeline-entry [entry]="entry">
+      </app-timeline-entry>
+    </div>
+  </ng-container>
+</ng-container>

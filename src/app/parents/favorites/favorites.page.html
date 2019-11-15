@@ -1,9 +1,11 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>
-      Tab Two
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
+<ion-content>
+  <section class="logo">
+    <img src="/assets/img/logo.png">
+  </section>
 
-<ion-content></ion-content>
+  <ion-spinner *ngIf="!loaded"
+               color="primary"
+               name="dots">
+  </ion-spinner>
+  <app-timeline [timeline]="timeline$ | async"></app-timeline>
+</ion-content>

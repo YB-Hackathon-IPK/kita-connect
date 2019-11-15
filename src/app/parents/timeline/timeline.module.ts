@@ -4,15 +4,19 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { TimelinePage } from './timeline.page';
+import { ComponentsModule } from '../components/components.module';
 
 @NgModule({
   imports: [
     IonicModule,
     CommonModule,
     FormsModule,
+    ComponentsModule,
     RouterModule.forChild([{ path: '', component: TimelinePage }])
   ],
-  declarations: [TimelinePage]
+  declarations: [
+    TimelinePage
+  ]
 })
 export class TimelineModule {
 }

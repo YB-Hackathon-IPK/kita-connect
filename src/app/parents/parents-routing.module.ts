@@ -4,7 +4,7 @@ import { ParentsPage } from './parents.page';
 
 const routes: Routes = [
   {
-    path: 'tabs',
+    path: '',
     component: ParentsPage,
     children: [
       {
@@ -39,14 +39,14 @@ const routes: Routes = [
       },
       {
         path: '',
-        redirectTo: '/parents/tabs/timeline',
+        redirectTo: '/parents/timeline',
         pathMatch: 'full'
       }
     ]
   },
   {
     path: '',
-    redirectTo: '/parents/tabs/timeline',
+    redirectTo: '/parents/timeline',
     pathMatch: 'full'
   }
 ];

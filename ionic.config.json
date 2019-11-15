@@ -1,5 +1,7 @@
 {
   "name": "kidConnect",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }
