@@ -45,6 +45,11 @@ const routes: Routes = [
     ]
   },
   {
+    path: 'introduction',
+    loadChildren: () =>
+      import('./introduction/introduction.module').then(m => m.IntroductionModule)
+  },
+  {
     path: '',
     redirectTo: '/parents/tabs/timeline',
     pathMatch: 'full'
