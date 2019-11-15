@@ -1,2 +1,26 @@
-<ion-button (click)="navigateTo(['supervisor'])">Beteuer</ion-button>
-<ion-button (click)="navigateTo(['parents'])">Elternteil</ion-button>
+<ion-content>
+  <section>
+    <ion-button [routerLink]="['supervisor']">Betreuer</ion-button>
+  </section>
+  <section>
+    <ion-button [routerLink]="['parents']">Elternteil</ion-button>
+  </section>
+</ion-content>
+<!--<ion-grid>-->
+<!--  <ion-row>-->
+<!--    <ion-col>-->
+<!--      img-->
+<!--    </ion-col>-->
+<!--  </ion-row>-->
+<!--  <ion-row>-->
+<!--    <ion-col align-items-center-->
+<!--             justify-content-center>-->
+<!--      <ion-button [routerLink]="['supervisor']">Betreuer</ion-button>-->
+<!--    </ion-col>-->
+<!--  </ion-row>-->
+<!--  <ion-row>-->
+<!--    <ion-col>-->
+<!--      <ion-button [routerLink]="['parents']">Elternteil</ion-button>-->
+<!--    </ion-col>-->
+<!--  </ion-row>-->
+<!--</ion-grid>-->

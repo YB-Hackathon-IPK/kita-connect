@@ -1,52 +1,52 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { TabsPage } from './tabs.page';
+import { ParentsPage } from './parents.page';
 
 const routes: Routes = [
   {
     path: 'tabs',
-    component: TabsPage,
+    component: ParentsPage,
     children: [
       {
-        path: 'tab1',
+        path: 'timeline',
         children: [
           {
             path: '',
             loadChildren: () =>
-              import('../tab1/tab1.module').then(m => m.Tab1PageModule)
+              import('../timeline/timeline.module').then(m => m.TimelineModule)
           }
         ]
       },
       {
-        path: 'tab2',
+        path: 'favorites',
         children: [
           {
             path: '',
             loadChildren: () =>
-              import('../tab2/tab2.module').then(m => m.Tab2PageModule)
+              import('../favorites/favorites.module').then(m => m.FavoritesModule)
           }
         ]
       },
       {
-        path: 'tab3',
+        path: 'highlights',
         children: [
           {
             path: '',
             loadChildren: () =>
-              import('../tab3/tab3.module').then(m => m.Tab3PageModule)
+              import('../highlights/highlights.module').then(m => m.HighlightsModule)
           }
         ]
       },
       {
         path: '',
-        redirectTo: '/parents/tabs/tab1',
+        redirectTo: '/parents/tabs/timeline',
         pathMatch: 'full'
       }
     ]
   },
   {
     path: '',
-    redirectTo: '/parents/tabs/tab1',
+    redirectTo: '/parents/tabs/timeline',
     pathMatch: 'full'
   }
 ];
@@ -55,4 +55,5 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
-export class TabsPageRoutingModule {}
+export class ParentsPageRoutingModule {
+}
