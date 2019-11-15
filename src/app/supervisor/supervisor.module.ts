@@ -7,14 +7,16 @@ import { SupervisorPageRoutingModule } from './supervisor-routing.module';
 
 import { SupervisorPage } from './supervisor.page';
 
+import { TimelinePostService } from './services/timeline-post.service';
+
 @NgModule({
   imports: [
     IonicModule,
     CommonModule,
     FormsModule,
-    SupervisorPageRoutingModule
+    SupervisorPageRoutingModule,
   ],
-  declarations: [SupervisorPage]
+  declarations: [SupervisorPage],
+  providers: [TimelinePostService],
 })
-export class SupervisorModule {
-}
+export class SupervisorModule {}

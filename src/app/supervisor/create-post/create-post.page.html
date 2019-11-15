@@ -2,11 +2,42 @@
   <section class="logo">
     <img src="assets/img/logo.png" />
   </section>
-  <section *ngIf="params$ | async as params">
-    {{ params.get('type') }}
-  </section>
+  <!-- <section *ngIf="params$ | async as params">
+    <p *ngIf="params.get('type') !== 'camera'">{{ params.get('type') }}</p>
+  </section> -->
 
-  <section>
+  <ion-item>
+    <ion-label position="floating">Text / Beschreibung</ion-label>
+    <ion-input clearInput></ion-input>
+  </ion-item>
+
+  <ion-item
+    ><ion-label>Stimmung</ion-label>
+    <ion-button
+      [color]="sentiment === 0 ? 'primary' : 'light'"
+      (click)="setSentiment(0)"
+    >
+      <ion-img src="assets/icon/frown.svg" slot="end"></ion-img>
+    </ion-button>
+    <ion-button
+      [color]="sentiment === 1 ? 'primary' : 'light'"
+      (click)="setSentiment(1)"
+    >
+      <ion-img src="assets/icon/meh.svg" slot="end"></ion-img>
+    </ion-button>
+    <ion-button
+      [color]="sentiment === 2 ? 'primary' : 'light'"
+      (click)="setSentiment(2)"
+    >
+      <ion-img src="assets/icon/smile.svg" slot="end"></ion-img> </ion-button
+  ></ion-item>
+
+  <div *ngIf="imageDataUrl">
+    <ion-item>
+      <ion-label>Bild</ion-label>
+    </ion-item>
     <img src="{{imageDataUrl}}" alt="" />
-  </section>
+  </div>
+
+  <ion-button expand="block" (click)="send()">Senden</ion-button>
 </ion-content>
