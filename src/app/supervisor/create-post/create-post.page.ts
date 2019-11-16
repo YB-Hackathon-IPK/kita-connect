@@ -3,6 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { Camera, CameraOptions } from '@ionic-native/camera/ngx';
 import { TimelinePostService } from '../services/timeline-post.service';
 import { TimelineEntry } from 'src/app/parents/models/timeline-entry.model';
+import { TimelineEntryType } from 'src/app/parents/models/timeline-entry-type.model';
 
 @Component({
   selector: 'app-create-post',
@@ -15,6 +16,7 @@ export class CreatePostPage implements OnInit {
   text: string;
   imageDataUrl: string;
   sentiment: number = null;
+  type: TimelineEntryType;
 
   constructor(
     private route: ActivatedRoute,
@@ -38,23 +40,32 @@ export class CreatePostPage implements OnInit {
   }
 
   send() {
-    this.postService.postEntry({
+    const entry: TimelineEntry = {
       child: 'Adrienne Ponce',
       favorite: false,
       image: this.imageDataUrl,
       sentiment: this.sentiment,
       text: this.text,
       timestamp: new Date().valueOf(),
-    } as TimelineEntry);
+      type: this.type,
+      id: '',
+      tags: [],
+    };
+    console.log('Posting', entry);
+
+    this.postService
+      .postEntry(entry)
+      .subscribe(response => console.log('got response', response));
   }
 
   ngOnInit(): void {
-    if (!this.camera) {
-      return;
-    }
-
     this.params$.subscribe(p => {
+      this.type = p.get('type') as TimelineEntryType;
+
       if (p.get('type') === 'camera') {
+        if (!this.camera) {
+          return;
+        }
         this.camera
           .getPicture(this.camOptions)
           .then(data => 'data:image/jpeg;base64,' + data)
