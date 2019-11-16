@@ -67,7 +67,6 @@ fastlane/readme.md
 node_modules
 www
 platforms
-resources
 plugins
 .idea
 .vscode
