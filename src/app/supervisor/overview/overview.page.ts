@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { AfterViewInit, Component, ElementRef } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
@@ -12,6 +12,6 @@ export class OverviewPage {
   }
 
   open(type: string) {
-    this.router.navigate(['supervisor', 'tabs', 'create-post', type]);
+    this.router.navigate(['supervisor', 'create-post', type]);
   }
 }

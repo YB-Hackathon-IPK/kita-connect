@@ -4,7 +4,7 @@ import { SupervisorPage } from './supervisor.page';
 
 const routes: Routes = [
   {
-    path: 'tabs',
+    path: '',
     component: SupervisorPage,
     children: [
       {
@@ -29,7 +29,7 @@ const routes: Routes = [
       },
       {
         path: '',
-        redirectTo: '/supervisor/tabs/overview',
+        redirectTo: '/supervisor/overview',
         pathMatch: 'full'
       }
     ]

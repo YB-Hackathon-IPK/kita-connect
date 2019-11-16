@@ -1,9 +1,9 @@
-import { Component, OnInit, Optional } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+import { TimelineEntryType } from '../../parents/models/timeline-entry-type.model';
 import { Camera, CameraOptions } from '@ionic-native/camera/ngx';
 import { TimelinePostService } from '../services/timeline-post.service';
 import { TimelineEntry } from 'src/app/parents/models/timeline-entry.model';
-import { TimelineEntryType } from 'src/app/parents/models/timeline-entry-type.model';
 
 @Component({
   selector: 'app-create-post',
@@ -18,17 +18,31 @@ export class CreatePostPage implements OnInit {
   sentiment: number = null;
   type: TimelineEntryType;
 
-  constructor(
-    private route: ActivatedRoute,
-    private camera: Camera,
-    private postService: TimelinePostService
-  ) {
+  constructor(private route: ActivatedRoute,
+              private router: Router,
+              private camera: Camera,
+              private postService: TimelinePostService) {
     this.camOptions = {
       quality: 30,
       destinationType: this.camera.DestinationType.DATA_URL,
       encodingType: this.camera.EncodingType.JPEG,
       mediaType: this.camera.MediaType.PICTURE,
     };
+  }
+
+  public getFancyTypeName(type: TimelineEntryType) {
+    switch (type) {
+      case 'image':
+        return 'Bild';
+      case 'menue':
+        return 'Mittagsmenu';
+      case 'summary':
+        return 'Tagesfazit';
+      case 'text':
+        return 'Text';
+      case 'video':
+        return 'Video';
+    }
   }
 
   setSentiment(newSentiment: number) {
@@ -51,11 +65,13 @@ export class CreatePostPage implements OnInit {
       id: '',
       tags: [],
     };
-    console.log('Posting', entry);
 
     this.postService
-      .postEntry(entry)
-      .subscribe(response => console.log('got response', response));
+        .postEntry(entry)
+        .subscribe(
+            () => this.router.navigate(['../success'], { relativeTo: this.route }),
+            () => this.router.navigate(['../../overview'], { relativeTo: this.route })
+        );
   }
 
   ngOnInit(): void {
@@ -66,10 +82,11 @@ export class CreatePostPage implements OnInit {
         if (!this.camera) {
           return;
         }
+        this.type = 'image';
         this.camera
-          .getPicture(this.camOptions)
-          .then(data => 'data:image/jpeg;base64,' + data)
-          .then(dataUrl => (this.imageDataUrl = dataUrl));
+            .getPicture(this.camOptions)
+            .then(data => 'data:image/jpeg;base64,' + data)
+            .then(dataUrl => (this.imageDataUrl = dataUrl));
       }
     });
   }

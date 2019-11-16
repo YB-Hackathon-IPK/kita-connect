@@ -1,0 +1,15 @@
+<div class="scroll-context">
+  <ng-container *ngFor="let child of children">
+    <div *ngIf="!currentChild || child.name === currentChild"
+         (click)="selectChild(child.name)"
+         class="child-container">
+      <img [src]="child.image">
+      <div class="name">
+      <span *ngFor="let parts of child.name.split(' ')">
+        {{ parts }}
+        <br/>
+      </span>
+      </div>
+    </div>
+  </ng-container>
+</div>

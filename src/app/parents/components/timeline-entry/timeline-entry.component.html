@@ -6,7 +6,7 @@
               [name]="entry.favorite ? 'heart' : 'heart-empty'">
     </ion-icon>
   </ion-row>
-  <ion-row *ngIf="entry.type === 'image'">
+  <ion-row *ngIf="entry.type === 'image' && entry.image">
     <img [src]="entry.image">
   </ion-row>
   <ion-row *ngIf="entry.text"
@@ -15,6 +15,7 @@
       <p>{{ entry.text }} {{ concatenatedTags }}</p>
     </ion-col>
     <ion-col class="sentiment-container"
+             [size]="isValidSentiment() ? 2 : 12"
              *ngIf="isValidSentiment()">
       <ion-icon src="/assets/icon/smile.svg"
                 [class.selected]="entry.sentiment === 2">
