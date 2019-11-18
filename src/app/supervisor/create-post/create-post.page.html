@@ -8,6 +8,7 @@
   <section *ngIf="params$ | async as params">
     <p><b>Inhaltstyp:</b> {{ getFancyTypeName($any(params.get('type'))) }}</p>
   </section>
+  <app-child-selector (selected)="onChilSelected($event)"></app-child-selector>
   <div class="text-item">
     <ion-label position="floating">Text / Beschreibung</ion-label>
     <ion-input clearInput

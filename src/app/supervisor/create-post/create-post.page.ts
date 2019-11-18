@@ -17,6 +17,7 @@ export class CreatePostPage implements OnInit {
   imageDataUrl: string;
   sentiment: number = null;
   type: TimelineEntryType;
+  child: string;
 
   constructor(private route: ActivatedRoute,
               private router: Router,
@@ -54,8 +55,12 @@ export class CreatePostPage implements OnInit {
   }
 
   send() {
+    if (!this.child) {
+      return;
+    }
+
     const entry: TimelineEntry = {
-      child: 'Adrienne Ponce',
+      child: this.child,
       favorite: false,
       image: this.imageDataUrl,
       sentiment: this.sentiment,
@@ -89,5 +94,9 @@ export class CreatePostPage implements OnInit {
             .then(dataUrl => (this.imageDataUrl = dataUrl));
       }
     });
+  }
+
+  onChilSelected($event: string) {
+    this.child = $event;
   }
 }
